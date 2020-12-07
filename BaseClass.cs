@@ -11,7 +11,7 @@ namespace MedziagosKartojimas
 			Name = name;
 		}
 
-		public readonly string Name;
+		public string Name { get; }
 		public abstract string NameMetodas();
 		public abstract int NameKodas(int a);
 
