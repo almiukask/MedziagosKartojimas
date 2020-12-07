@@ -16,14 +16,20 @@ namespace MedziagosKartojimas
 
 		public override int NameKodas(int a)
 		{
-			
-			throw new NotImplementedException();
+			char[]array = vidinisName.ToCharArray();
+			int laikinas=0, suma=0;
+			bool flag;
+			foreach (var ch in array)
+			{
+				flag = Int32.TryParse(Encoding.ASCII.GetBytes(ch.ToString()).ToString(), out laikinas);
+				if (flag) suma = suma + laikinas * a;
+			}
+			return suma;
 		}
 
 
 		public override string NameMetodas()
 		{
-			//char[]array = vidinisName.ToCharArray();
 			StringBuilder naujasZodis = new StringBuilder();
 			foreach (var ch in vidinisName)
 			{
