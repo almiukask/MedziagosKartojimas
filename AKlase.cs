@@ -23,7 +23,7 @@ namespace MedziagosKartojimas
 
 		public override string NameMetodas()
 		{
-			char[]array = vidinisName.ToCharArray();
+			//char[]array = vidinisName.ToCharArray();
 			StringBuilder naujasZodis = new StringBuilder();
 			foreach (var ch in vidinisName)
 			{
