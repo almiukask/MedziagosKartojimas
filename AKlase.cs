@@ -12,7 +12,7 @@ namespace MedziagosKartojimas
 			vidinisName = name;
 		}
 
-		public string vidinisName { get; set; }
+		string vidinisName { get; set; }
 
 		public override int NameKodas(int a)
 		{
@@ -33,13 +33,23 @@ namespace MedziagosKartojimas
 			StringBuilder naujasZodis = new StringBuilder();
 			foreach (var ch in vidinisName)
 			{
-				foreach (var balse in balses)
-				{
-					if (ch == balse) naujasZodis.Append(Encoding.ASCII.GetBytes(ch.ToString()));
-					else naujasZodis.Append(ch);
-				}
+				if (Arbalse(ch)) naujasZodis.Append(Encoding.ASCII.GetBytes(ch.ToString()));
+				else naujasZodis.Append(ch);
+
 			}
 			return naujasZodis.ToString();
+		}
+
+		bool Arbalse(char ch)
+		{
+			bool arBalse = false;
+			foreach (var balse in balses)
+			{
+				if (ch == balse)
+				{ arBalse = true; };
+
+			}
+			return arBalse;
 		}
 	}
 }
