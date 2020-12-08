@@ -7,6 +7,11 @@ namespace MedziagosKartojimas
 	public class AKlase : BaseClass
 	{
 		char[] balses = {'a','e','i','o','u','y' };
+
+		public AKlase()
+		{
+		}
+
 		public AKlase(string name) : base(name)
 		{
 			vidinisName = name;
@@ -22,7 +27,7 @@ namespace MedziagosKartojimas
 			foreach (var ch in array)
 			{
 				flag = Int32.TryParse(Encoding.ASCII.GetBytes(ch.ToString()).ToString(), out laikinas);
-				if (flag) suma = suma + laikinas * a;
+				if (flag) suma = suma + laikinas - a;
 			}
 			return suma;
 		}
@@ -40,7 +45,7 @@ namespace MedziagosKartojimas
 			return naujasZodis.ToString();
 		}
 
-		public bool Arbalse(char ch)
+		protected bool Arbalse(char ch)
 		{
 			bool arBalse = false;
 			foreach (var balse in balses)

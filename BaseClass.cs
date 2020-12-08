@@ -11,6 +11,10 @@ namespace MedziagosKartojimas
 			Name = name;
 		}
 
+		protected BaseClass()
+		{
+		}
+
 		public string Name { get; }
 		public abstract string NameMetodas();
 		public abstract int NameKodas(int a);

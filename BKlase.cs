@@ -8,6 +8,10 @@ namespace MedziagosKartojimas
 	{
 		string vidinisName;
 
+		public BKlase()
+		{
+		}
+
 		public BKlase(string name):base(name)
 		{
 			name = vidinisName;
