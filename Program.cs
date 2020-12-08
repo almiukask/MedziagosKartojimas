@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MedziagosKartojimas
 {
@@ -19,8 +20,17 @@ namespace MedziagosKartojimas
                 new Customer(){ Name="Tina Fey", Balance=1000000.00, Bank="CITI"},
                 new Customer(){ Name="Sid Brown", Balance=49582.68, Bank="CITI"}
             };
+            List<string> Vardai = new List<string>();
+            Vardai=Milijonieriai(customers);
 
-            Console.WriteLine("Hello World!");
-		}
+
+        }
+
+        static List<string> Milijonieriai(List<Customer> customers)
+        {
+            List<string> MilijonieriuVardai = new List<string>();
+            MilijonieriuVardai = customers.Where(z => z.Balance > 1000000).Select(z => z.Name).ToList();
+            return MilijonieriuVardai;
+        }
 	}
 }
