@@ -58,12 +58,12 @@ namespace MedziagosKartojimas
 			return naujasZodis.ToString();
 		}
 
-		public string ZodisSuPakeistomisPriebalsemis(int index)
+		public string ZodisSuPakeistomisPriebalsemis(int number)
 		{
 			StringBuilder naujasZodis = new StringBuilder();
 			foreach (var ch in vidinisName)
 			{
-				if (!Arbalse(ch)) naujasZodis.Append(index);
+				if (!Arbalse(ch)) naujasZodis.Append(number);
 				else naujasZodis.Append(ch);
 			}
 			return naujasZodis.ToString();
