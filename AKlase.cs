@@ -40,7 +40,7 @@ namespace MedziagosKartojimas
 			return naujasZodis.ToString();
 		}
 
-		bool Arbalse(char ch)
+		public bool Arbalse(char ch)
 		{
 			bool arBalse = false;
 			foreach (var balse in balses)
